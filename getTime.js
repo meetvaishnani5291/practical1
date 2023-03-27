@@ -1,15 +1,7 @@
 const fs = require("fs");
 
 const getTime = (timeString) => {
-  const [time, period] = timeString.split(" ");
-  let [hour, minute] = time.split(":");
-  hour = parseInt(hour);
-  minute = parseInt(minute);
-
-  period === "PM" && (hour += 12);
-  const date = new Date();
-  date.setHours(hour);
-  date.setMinutes(minute);
+  const date = new Date("01/01/2000 " + timeString);
 
   return date.getTime();
 };
